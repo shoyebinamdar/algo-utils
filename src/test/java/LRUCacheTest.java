@@ -40,4 +40,32 @@ public class LRUCacheTest {
 
     assertArrayEquals(expectedList.toArray(), lruCache.get().toArray());
   }
+
+  @Test
+  public void testLRU_3() {
+    LRUCache lruCache = new LRUCache(3);
+    lruCache.refer(1);
+    lruCache.refer(2);
+    lruCache.refer(3);
+    lruCache.refer(1);
+
+
+    List<Integer> expectedList = Arrays.asList(1, 3, 2);
+
+    assertArrayEquals(expectedList.toArray(), lruCache.get().toArray());
+  }
+
+  @Test
+  public void testLRU_4() {
+    LRUCache lruCache = new LRUCache(3);
+    lruCache.refer(1);
+    lruCache.refer(2);
+    lruCache.refer(2);
+    lruCache.refer(3);
+
+
+    List<Integer> expectedList = Arrays.asList(3, 2, 1);
+
+    assertArrayEquals(expectedList.toArray(), lruCache.get().toArray());
+  }
 }
