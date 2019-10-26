@@ -1,9 +1,11 @@
-package binarytree;
+package binarytree.bst;
+
+import binarytree.Node;
 
 public class BST {
   Node root;
 
-  BST() {
+  public BST() {
     root = null;
   }
 

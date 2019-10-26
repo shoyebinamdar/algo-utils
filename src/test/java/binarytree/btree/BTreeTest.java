@@ -1,12 +1,14 @@
-package binarytree;
+package binarytree.btree;
 
-import static org.junit.Assert.*;
-
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
+import binarytree.Node;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+
+import static org.junit.Assert.assertEquals;
 
 public class BTreeTest {
   private BTree bTree = new BTree();
