@@ -10,8 +10,8 @@ import java.io.PrintStream;
 
 import static org.junit.Assert.assertEquals;
 
-public class BTreeTest {
-  private BTree bTree = new BTree();
+public class BTreeTraversalTest {
+  private BTreeTraversal bTreeTraversal = new BTreeTraversal();
 
   private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
   private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
@@ -20,11 +20,11 @@ public class BTreeTest {
 
   @Before
   public void setup() {
-    bTree.root = new Node(1);
-    bTree.root.left = new Node(2);
-    bTree.root.right = new Node(3);
-    bTree.root.left.left = new Node(4);
-    bTree.root.left.right = new Node(5);
+    bTreeTraversal.root = new Node(1);
+    bTreeTraversal.root.left = new Node(2);
+    bTreeTraversal.root.right = new Node(3);
+    bTreeTraversal.root.left.left = new Node(4);
+    bTreeTraversal.root.left.right = new Node(5);
 
     System.setOut(new PrintStream(outContent));
     System.setErr(new PrintStream(errContent));
@@ -38,19 +38,19 @@ public class BTreeTest {
 
   @Test
   public void testPreOrder() {
-    bTree.preOrder();
+    bTreeTraversal.preOrder();
     assertEquals("1\n2\n4\n5\n3\n", outContent.toString());
   }
 
   @Test
   public void testInOrder() {
-    bTree.inOrder();
+    bTreeTraversal.inOrder();
     assertEquals("4\n2\n5\n1\n3\n", outContent.toString());
   }
 
   @Test
   public void testPostOrder() {
-    bTree.postOrder();
+    bTreeTraversal.postOrder();
     assertEquals("4\n5\n2\n3\n1\n", outContent.toString());
   }
 }

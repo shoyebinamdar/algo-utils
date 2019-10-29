@@ -2,12 +2,8 @@ package binarytree.btree;
 
 import binarytree.Node;
 
-public class BTree {
+public class BTreeTraversal {
   Node root;
-
-  public BTree() {
-    root = null;
-  }
 
   public void inOrder() {
     this.inOrder(root);
