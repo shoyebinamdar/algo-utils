@@ -1,5 +1,6 @@
 package binarytree.bst;
 
+import binarytree.utils.BST;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -17,11 +18,11 @@ public class BSTKthLargestTest {
 
     @Before
     public void setup() {
-        bstKthLargest.root = BSTUtils.insert(bstKthLargest.root, 4);
-        bstKthLargest.root = BSTUtils.insert(bstKthLargest.root, 2);
-        bstKthLargest.root = BSTUtils.insert(bstKthLargest.root, 5);
-        bstKthLargest.root = BSTUtils.insert(bstKthLargest.root, 1);
-        bstKthLargest.root = BSTUtils.insert(bstKthLargest.root, 3);
+        bstKthLargest.root = BST.insert(bstKthLargest.root, 4);
+        bstKthLargest.root = BST.insert(bstKthLargest.root, 2);
+        bstKthLargest.root = BST.insert(bstKthLargest.root, 5);
+        bstKthLargest.root = BST.insert(bstKthLargest.root, 1);
+        bstKthLargest.root = BST.insert(bstKthLargest.root, 3);
 
         System.setOut(new PrintStream(outContent));
     }

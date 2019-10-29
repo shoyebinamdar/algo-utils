@@ -1,12 +1,9 @@
 package binarytree.bst;
 
 import binarytree.Node;
-import org.junit.After;
+import binarytree.utils.BST;
 import org.junit.Before;
 import org.junit.Test;
-
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
 
 import static org.junit.Assert.assertEquals;
 
@@ -15,11 +12,11 @@ public class BSTSmallestTest {
 
     @Before
     public void setup() {
-        bstSmallest.root = BSTUtils.insert(bstSmallest.root, 4);
-        bstSmallest.root = BSTUtils.insert(bstSmallest.root, 2);
-        bstSmallest.root = BSTUtils.insert(bstSmallest.root, 5);
-        bstSmallest.root = BSTUtils.insert(bstSmallest.root, 1);
-        bstSmallest.root = BSTUtils.insert(bstSmallest.root, 3);
+        bstSmallest.root = BST.insert(bstSmallest.root, 4);
+        bstSmallest.root = BST.insert(bstSmallest.root, 2);
+        bstSmallest.root = BST.insert(bstSmallest.root, 5);
+        bstSmallest.root = BST.insert(bstSmallest.root, 1);
+        bstSmallest.root = BST.insert(bstSmallest.root, 3);
     }
 
     @Test

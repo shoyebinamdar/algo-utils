@@ -1,12 +1,8 @@
-package binarytree.bst;
+package binarytree.utils;
 
 import binarytree.Node;
 
-public class BSTUtils {
-
-    /*public static Node insert(Node root, int data) {
-        return insertUtil(root);
-    }*/
+public class BST {
 
     public static Node insert(Node root, int data) {
         if (root == null) {

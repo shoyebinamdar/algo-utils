@@ -3,6 +3,7 @@ package binarytree.bst;
 import static org.junit.Assert.*;
 
 import binarytree.Node;
+import binarytree.utils.BST;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -11,11 +12,11 @@ public class BSTSearchTest {
 
   @Before
   public void setup() {
-    bstSearch.root = BSTUtils.insert(bstSearch.root, 4);
-    bstSearch.root = BSTUtils.insert(bstSearch.root, 2);
-    bstSearch.root = BSTUtils.insert(bstSearch.root, 5);
-    bstSearch.root = BSTUtils.insert(bstSearch.root, 1);
-    bstSearch.root = BSTUtils.insert(bstSearch.root, 3);
+    bstSearch.root = BST.insert(bstSearch.root, 4);
+    bstSearch.root = BST.insert(bstSearch.root, 2);
+    bstSearch.root = BST.insert(bstSearch.root, 5);
+    bstSearch.root = BST.insert(bstSearch.root, 1);
+    bstSearch.root = BST.insert(bstSearch.root, 3);
   }
 
   @Test
