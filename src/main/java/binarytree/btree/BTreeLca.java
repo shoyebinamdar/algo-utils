@@ -7,24 +7,37 @@ import java.util.List;
 
 public class BTreeLca {
   Node root;
+  List<Integer> path1 = new ArrayList<>();
+  List<Integer> path2 = new ArrayList<>();
 
   public int lca(int n1, int n2) {
+    int loc = getLcaLoc(n1, n2);
 
-    List<Integer> path1 = new ArrayList<>();
-    List<Integer> path2 = new ArrayList<>();
+    return path1.get(loc);
+  }
+
+  public int distance(int n1, int n2) {
+    int loc = getLcaLoc(n1, n2);
+
+    return (path1.size() - (loc + 1)) + (path2.size() - (loc + 1));
+  }
+
+  private int getLcaLoc(int n1, int n2) {
+    path1.clear();
+    path2.clear();
 
     if (!findPath(root, n1, path1) || !findPath(root, n2, path2)) {
       return -1;
     }
 
-    int i;
+    int index;
 
-    for (i = 0; i < path1.size(); i++) {
-      if (!path1.get(i).equals(path2.get(i)))
+    for (index = 0; index < path1.size(); index++) {
+      if (!path1.get(index).equals(path2.get(index)))
         break;
     }
 
-    return path1.get(i - 1);
+    return index - 1;
   }
 
   private boolean findPath(Node node, int key, List<Integer> path) {

@@ -27,4 +27,12 @@ public class BTreeLcaTest {
         assertEquals(3, bTree.lca(6, 7));
         assertEquals(2, bTree.lca(2, 4));
     }
+
+    @Test
+    public void testDistance() {
+        assertEquals(2, bTree.distance(2, 3));
+        assertEquals(3, bTree.distance(3, 5));
+        assertEquals(2, bTree.distance(6, 7));
+        assertEquals(1, bTree.distance(2, 4));
+    }
 }
