@@ -18,11 +18,11 @@ public class BSTKthSmallestTest {
 
     @Before
     public void setup() {
-        bstKthSmallest.root = new Node(4);
-        bstKthSmallest.root.left = new Node(2);
-        bstKthSmallest.root.right = new Node(5);
-        bstKthSmallest.root.left.left = new Node(1);
-        bstKthSmallest.root.left.right = new Node(3);
+        bstKthSmallest.root = BSTUtils.insert(bstKthSmallest.root, 4);
+        bstKthSmallest.root = BSTUtils.insert(bstKthSmallest.root, 2);
+        bstKthSmallest.root = BSTUtils.insert(bstKthSmallest.root, 5);
+        bstKthSmallest.root = BSTUtils.insert(bstKthSmallest.root, 1);
+        bstKthSmallest.root = BSTUtils.insert(bstKthSmallest.root, 3);
 
         System.setOut(new PrintStream(outContent));
     }

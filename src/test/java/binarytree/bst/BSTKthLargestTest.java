@@ -1,6 +1,5 @@
 package binarytree.bst;
 
-import binarytree.Node;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -8,7 +7,7 @@ import org.junit.Test;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 public class BSTKthLargestTest {
     BSTKthLargest bstKthLargest = new BSTKthLargest();
@@ -18,11 +17,11 @@ public class BSTKthLargestTest {
 
     @Before
     public void setup() {
-        bstKthLargest.root = new Node(4);
-        bstKthLargest.root.left = new Node(2);
-        bstKthLargest.root.right = new Node(5);
-        bstKthLargest.root.left.left = new Node(1);
-        bstKthLargest.root.left.right = new Node(3);
+        bstKthLargest.root = BSTUtils.insert(bstKthLargest.root, 4);
+        bstKthLargest.root = BSTUtils.insert(bstKthLargest.root, 2);
+        bstKthLargest.root = BSTUtils.insert(bstKthLargest.root, 5);
+        bstKthLargest.root = BSTUtils.insert(bstKthLargest.root, 1);
+        bstKthLargest.root = BSTUtils.insert(bstKthLargest.root, 3);
 
         System.setOut(new PrintStream(outContent));
     }

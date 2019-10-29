@@ -11,18 +11,32 @@ public class BSTSearchTest {
 
   @Before
   public void setup() {
-    bstSearch.root = new Node(4);
-    bstSearch.root.left = new Node(2);
-    bstSearch.root.right = new Node(5);
-    bstSearch.root.left.left = new Node(1);
-    bstSearch.root.left.right = new Node(3);
+    bstSearch.root = BSTUtils.insert(bstSearch.root, 4);
+    bstSearch.root = BSTUtils.insert(bstSearch.root, 2);
+    bstSearch.root = BSTUtils.insert(bstSearch.root, 5);
+    bstSearch.root = BSTUtils.insert(bstSearch.root, 1);
+    bstSearch.root = BSTUtils.insert(bstSearch.root, 3);
   }
 
   @Test
-  public void testSearch() {
+  public void testSearchNotExistingElement() {
     assertEquals(null, bstSearch.search(6));
-    assertEquals(bstSearch.root.left.right, bstSearch.search(3));
+  }
+
+  @Test
+  public void testSearchRoot() {
     assertEquals(bstSearch.root, bstSearch.search(4));
-    assertEquals(bstSearch.root.right, bstSearch.search(5));
+  }
+
+  @Test
+  public void testSearchOnLeft() {
+    Node expectedNode = new Node(3);
+    assertEquals(expectedNode.data, bstSearch.search(3).data);
+  }
+
+  @Test
+  public void testSearchOnRight() {
+    Node expectedNode = new Node(5);
+    assertEquals(expectedNode.data, bstSearch.search(5).data);
   }
 }

@@ -11,11 +11,11 @@ public class BSTLargestTest {
 
     @Before
     public void setup() {
-        bstLargest.root = new Node(4);
-        bstLargest.root.left = new Node(2);
-        bstLargest.root.right = new Node(5);
-        bstLargest.root.left.left = new Node(1);
-        bstLargest.root.left.right = new Node(3);
+        bstLargest.root = BSTUtils.insert(bstLargest.root, 4);
+        bstLargest.root = BSTUtils.insert(bstLargest.root, 2);
+        bstLargest.root = BSTUtils.insert(bstLargest.root, 5);
+        bstLargest.root = BSTUtils.insert(bstLargest.root, 1);
+        bstLargest.root = BSTUtils.insert(bstLargest.root, 3);
     }
 
     @Test

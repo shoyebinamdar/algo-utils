@@ -15,11 +15,11 @@ public class BSTSmallestTest {
 
     @Before
     public void setup() {
-        bstSmallest.root = new Node(4);
-        bstSmallest.root.left = new Node(2);
-        bstSmallest.root.right = new Node(5);
-        bstSmallest.root.left.left = new Node(1);
-        bstSmallest.root.left.right = new Node(3);
+        bstSmallest.root = BSTUtils.insert(bstSmallest.root, 4);
+        bstSmallest.root = BSTUtils.insert(bstSmallest.root, 2);
+        bstSmallest.root = BSTUtils.insert(bstSmallest.root, 5);
+        bstSmallest.root = BSTUtils.insert(bstSmallest.root, 1);
+        bstSmallest.root = BSTUtils.insert(bstSmallest.root, 3);
     }
 
     @Test
