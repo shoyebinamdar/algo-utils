@@ -2,12 +2,8 @@ package binarytree.bst;
 
 import binarytree.Node;
 
-public class BST {
+public class BSTSearch {
   Node root;
-
-  public BST() {
-    root = null;
-  }
 
   public Node search(Integer key) {
     return search(root, key);
