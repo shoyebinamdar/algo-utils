@@ -248,7 +248,7 @@ public class Kitty {
         set.add(Integer.parseInt(nodes[j]));
       }
       printSolution1(graph, set);
-      //nodesSets.add(set);
+      //nodesSets.prepend(set);
     }
 
     //nodesSets.stream().forEach(n -> n.stream().forEach(System.out::println));

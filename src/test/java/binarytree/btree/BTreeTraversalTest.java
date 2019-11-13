@@ -14,9 +14,7 @@ public class BTreeTraversalTest {
   private BTreeTraversal bTreeTraversal = new BTreeTraversal();
 
   private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
-  private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
   private final PrintStream originalOut = System.out;
-  private final PrintStream originalErr = System.err;
 
   @Before
   public void setup() {
@@ -27,13 +25,11 @@ public class BTreeTraversalTest {
     bTreeTraversal.root.left.right = new Node(5);
 
     System.setOut(new PrintStream(outContent));
-    System.setErr(new PrintStream(errContent));
   }
 
   @After
   public void reset() {
     System.setOut(originalOut);
-    System.setErr(originalErr);
   }
 
   @Test
