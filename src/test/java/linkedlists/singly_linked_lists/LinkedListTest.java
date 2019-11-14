@@ -112,4 +112,33 @@ public class LinkedListTest {
 
         assertEquals(false, Utils.hasLoop(node));
     }
+
+    @Test
+    public void shouldReverseKNodes() {
+        LinkedList list = new LinkedList();
+        list.append(1);
+        list.append(2);
+        list.append(3);
+        list.append(4);
+        list.append(5);
+        list.append(6);
+        list.append(7);
+        list.append(8);
+        list.append(9);
+
+        Node reversedNode = Utils.reverseKNodes(list.getHead(), 3);
+
+        LinkedList expectedList = new LinkedList();
+        expectedList.append(3);
+        expectedList.append(2);
+        expectedList.append(1);
+        expectedList.append(6);
+        expectedList.append(5);
+        expectedList.append(4);
+        expectedList.append(9);
+        expectedList.append(8);
+        expectedList.append(7);
+
+        assertEquals(true, Utils.compare(expectedList.getHead(), reversedNode));
+    }
 }

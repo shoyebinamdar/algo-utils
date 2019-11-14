@@ -30,6 +30,27 @@ public class Utils {
             return false;
     }
 
+    public static Node reverseKNodes(Node head, int k) {
+        Node curr = head;
+        Node next = null, prev = null;
+
+        int count = 0;
+
+        while (curr != null && count < k) {
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+
+            count++;
+        }
+
+        if (curr != null)
+            head.next = reverseKNodes(next, k);
+
+        return prev;
+    }
+
     public static void print(Node head) {
         Node curr = head;
         while (curr != null) {
