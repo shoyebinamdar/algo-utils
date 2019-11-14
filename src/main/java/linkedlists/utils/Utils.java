@@ -15,6 +15,21 @@ public class Utils {
         return c1 == null && c2 == null;
     }
 
+    public static boolean hasLoop(Node head) {
+        Node slow = head;
+        Node fast = head.next;
+
+        while (fast != null && slow != fast) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+
+        if (fast != null)
+            return true;
+        else
+            return false;
+    }
+
     public static void print(Node head) {
         Node curr = head;
         while (curr != null) {

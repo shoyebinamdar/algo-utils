@@ -61,10 +61,6 @@ public class LinkedList {
         return prev;
     }
 
-    public boolean isEmpty() {
-        return size() == 0;
-    }
-
     public int size() {
         return size;
     }

@@ -1,5 +1,6 @@
 package linkedlists.singly_linked_lists;
 
+import linkedlists.Node;
 import linkedlists.utils.Utils;
 import org.junit.After;
 import org.junit.Before;
@@ -96,5 +97,19 @@ public class LinkedListTest {
         linkedListToCompare.append(3);
 
         assertEquals(false, Utils.compare(linkedList.getHead(), linkedListToCompare.getHead()));
+    }
+
+    @Test
+    public void shouldDetectLoop() {
+        Node node = new Node(1);
+        node.next = new Node(2);
+        node.next.next = new Node(3);
+        node.next.next.next = node.next.next;
+
+        assertEquals(true, Utils.hasLoop(node));
+
+        node.next.next.next = null;
+
+        assertEquals(false, Utils.hasLoop(node));
     }
 }
