@@ -9,9 +9,9 @@ public class PrimsMinimumSpanningTreeAdjacencyList {
         int dest;
         int weight;
 
-        GraphNode(int a, int b) {
-            dest = a;
-            weight = b;
+        GraphNode(int dest, int weight) {
+            this.dest = dest;
+            this.weight = weight;
         }
     }
 
