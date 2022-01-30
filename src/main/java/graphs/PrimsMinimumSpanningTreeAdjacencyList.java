@@ -29,13 +29,13 @@ public class PrimsMinimumSpanningTreeAdjacencyList {
 
     class PQNode {
         int vertex;
-        int key;
+        int weight;
     }
 
     class PQComparator implements Comparator<PQNode> {
         @Override
         public int compare(PQNode node1, PQNode node2) {
-            return node1.key - node2.key;
+            return node1.weight - node2.weight;
         }
     }
 
@@ -58,7 +58,7 @@ public class PrimsMinimumSpanningTreeAdjacencyList {
         for (int v = 0; v < graph.vertices; v++) {
             visited[v] = false;
 
-            pqNodes[v].key = Integer.MAX_VALUE;
+            pqNodes[v].weight = Integer.MAX_VALUE;
             pqNodes[v].vertex = v;
 
             parent[v] = -1;
@@ -66,7 +66,7 @@ public class PrimsMinimumSpanningTreeAdjacencyList {
 
         visited[0] = true;
 
-        pqNodes[0].key = 0;
+        pqNodes[0].weight = 0;
 
         // Use TreeSet instead of PriorityQueue as the remove function of the PQ is O(n) in java.
         TreeSet<PQNode> queue = new TreeSet<>(new PQComparator());
@@ -86,9 +86,9 @@ public class PrimsMinimumSpanningTreeAdjacencyList {
                     // more than the extracted key
                     // update the key value of adjacent vertex
                     // to update first remove and add the updated vertex
-                    if (pqNodes[iterator.dest].key > iterator.weight) {
+                    if (pqNodes[iterator.dest].weight > iterator.weight) {
                         queue.remove(pqNodes[iterator.dest]);
-                        pqNodes[iterator.dest].key = iterator.weight;
+                        pqNodes[iterator.dest].weight = iterator.weight;
                         queue.add(pqNodes[iterator.dest]);
                         parent[iterator.dest] = node.vertex;
                     }
