@@ -2,9 +2,11 @@ package sorting;
 
 public class QuickSort {
     private void swap(int[] arr, int i, int j) {
-        int temp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = temp;
+        if (i != j) {
+            int temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+        }
     }
 
     public int partition(int[] arr, int left, int right) {
